@@ -14,7 +14,6 @@ personajes = list(set(lista_personajes))
 personajes_principales = [i.replace('-','') for i in personajes]
 #print personajes_principales
 dialogos = [i.split(':')[1] for i in lineas_personajes]
-
 d = {}
 lista = []
 for z in personajes:
