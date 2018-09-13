@@ -7,8 +7,6 @@
 
 from modulo import leer_archivo,interactua_con
 
-import operator                                               # Utilizado en Parte C.1
-
 guion=leer_archivo('guion2.txt')                              # Lectura desde archivo.
 lista=[]                                                      # Lista para reemplazo.
 frases=guion.split('\n')                                      # Separamos el string separando por nueva linea.

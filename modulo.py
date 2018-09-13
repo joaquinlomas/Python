@@ -27,11 +27,11 @@ def interactua_con (personaje, guion):
     identificador = '-' + personaje                                                 # Identificador de personaje argumento (En la lista de frases)
 
     for i in range(len(lista)):
-        frase_pasada = ''                                                             # Buffer para guardar frase anterior a la actual en ciclo for.
-        frase_siguiente = ''
         if lista[i].startswith(identificador):
-            lista_interaccion.append(lista[i-1].split(':')[0])
-            lista_interaccion.append(lista[i+1].split(':')[0])
+            if lista[i-1].split(':')[0] != identificador:
+                lista_interaccion.append(lista[i-1].split(':')[0])
+            if lista[i+1].split(':')[0] != identificador:
+                lista_interaccion.append(lista[i+1].split(':')[0])
     lista_interaccion=[s.replace('-', '') for s in lista_interaccion]           # Quita los guiones del principio de la lista de personajes relacionados al personaje argumento.
     lista_interaccion = list(set(lista_interaccion))
     return lista_interaccion
