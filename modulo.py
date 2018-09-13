@@ -9,11 +9,30 @@ def leer_archivo(nombre = "guion.txt"):
         
 #Para usar la funcion, puede utilizar la siguiente linea de codigo en su script
 #string = leer_archivo()
+        
+#------------------------------------------------------------------------------------------------------------------------------------------------
 
-#def dialogos (personaje, guion):
-#    #entrada: personaje (string), guion (string)
-#    #salida: otro_personaje (string)
-#    '''
-#    codigo
-#    '''
-#    return otro_personaje
+# d) Crear una funcion que reciba un personaje y el guion y retorne una lista con los nombres de los personajes con los cuales interactua.
+
+def interactua_con (personaje, guion):
+
+    guion=leer_archivo(guion)                                                   # Lectura desde archivo.
+    lista=[]                                                      # Lista para reemplazo.
+    frases=guion.split('\n')                                      # Separamos el string separando por nueva linea.
+    
+    for j in frases:                                           # Guardamos en la lista personajes solamente aquellos de la lista filtrado que empiecen con un guion.
+        if j.startswith('-'):
+            lista.append(j)
+    lista_interaccion = []                                                        # Lista de personajes que interactuan con el personaje argumento.
+    identificador = '-' + personaje                                                 # Identificador de personaje argumento (En la lista de frases)
+
+    for i in range(len(lista)):
+        frase_pasada = ''                                                             # Buffer para guardar frase anterior a la actual en ciclo for.
+        frase_siguiente = ''
+        if lista[i].startswith(identificador):
+            lista_interaccion.append(lista[i-1].split(':')[0])
+            lista_interaccion.append(lista[i+1].split(':')[0])
+    lista_interaccion=[s.replace('-', '') for s in lista_interaccion]           # Quita los guiones del principio de la lista de personajes relacionados al personaje argumento.
+    lista_interaccion = list(set(lista_interaccion))
+    return lista_interaccion
+#------------------------------------------------------------------------------------

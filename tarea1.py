@@ -77,16 +77,9 @@ print('El personaje con menor cantidad de dialogos es ' + dialogador_min + ' con
 #----------------------------------------------------------------------------------------------------------------------------------------------------
 
 # d) Se encuentra en archivo modulo.py
-personaje = input('Introduzca el nombre de un personaje: ')
-
-interactua_con_personaje=interactua_con(personaje,'guion2.txt')
-
+personaje = raw_input('Introduzca el nombre de un personaje: ')
+interactuan_con_personaje = interactua_con(personaje,'guion2.txt')
 print interactuan_con_personaje
-
-
-
-
-
 
 
 
