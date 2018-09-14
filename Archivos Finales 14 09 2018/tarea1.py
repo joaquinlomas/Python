@@ -63,8 +63,8 @@ for k in contador.keys():                                   # Para cada personaj
     if contador[k][1] == minimo:                            # Si su dialogo mas corto tiene el largo minimo encontrado en todo el guion,
         dialogo_min.append(k)                               # entonces agrega este personaje a la lista de personajes con el dialogo mas corto.
 
-print('El personaje con el dialogo mas largo es ' + str(dialogo_max))      #Impresion en consola.
-print('Los personajes con el dialogo mas corto son ' + str(dialogo_min))
+print('El personaje con el dialogo mas largo es ' + str(dialogo_max) + ' con ' + str(maximo))      #Impresion en consola.
+print('Los personajes con el dialogo mas corto son ' + str(dialogo_min) + ' con ' + str(minimo))
 
 # C.2
 largo_dialogos=[]                                           # Genera lista que almacenara la cantidad de dialogos de cada personaje
